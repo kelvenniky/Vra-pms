@@ -1,0 +1,92 @@
+
+.whole{
+    background-color: #f8f8f8; /* Light background for the whole view */
+
+}
+.entry {
+    display: flex;
+    flex-direction: row;
+    padding: 20px; /* Added padding for better spacing */
+  }
+  
+  .row1 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .form {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    width: 500px;
+    height: auto; /* Allow height to adjust based on content */
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-color: white; /* White background for form */
+    padding: 20px; /* Internal padding for better spacing */
+  }
+  
+  input {
+    padding: 10px;
+    width: 100%; /* Full width for inputs */
+    outline: none;
+    border-radius: 5px; /* Slightly less rounded corners */
+    border: 1px solid #ccc; /* Neutral border color */
+    transition: border 0.3s; /* Smooth transition for focus effect */
+  }
+  
+  input:focus {
+    border: 2px solid rgb(95, 201, 233); /* Highlight border on focus */
+  }
+  
+  .form .textbox {
+    margin-bottom: 15px; /* Increased spacing between fields */
+  }
+  
+  .form .textbox p {
+    margin-bottom: 5px; /* Spacing for labels */
+    font-weight: bold; /* Bold text for labels */
+    color: #03274d; /* Consistent color for labels */
+  }
+  
+  .form button {
+    padding: 10px 15px; /* Increased padding for buttons */
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer; /* Pointer for buttons */
+    font-weight: bold; /* Bold text for buttons */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .form .submit {
+    color: white;
+    background-color: rgb(18, 192, 90); /* Green for submit button */
+    margin-right: 10px;
+  }
+  
+  .form .reset {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+  }
+  
+  .form .submit:hover {
+    background-color: rgb(14, 153, 76); /* Darker green on hover */
+  }
+  
+  .form .reset:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .entry {
+      flex-direction: column; /* Stack the sidebar and form on smaller screens */
+      align-items: center; /* Center align for better layout */
+    }
+  
+    .form {
+      width: 90%; /* Full width on mobile */
+    }
+  }

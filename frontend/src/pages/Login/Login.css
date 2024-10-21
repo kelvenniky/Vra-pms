@@ -1,0 +1,86 @@
+/* Login.css */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .login__view {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .login__contain {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login__pad {
+    margin-bottom: 15px;
+  }
+  
+  .login__email,
+  .login__password {
+    font-weight: bold;
+  }
+  
+  .login__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .login__button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .login__button:hover {
+    background-color: #0056b3;
+  }
+  
+  .login__label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login__tick {
+    margin-right: 5px;
+  }
+  .login__view > p{
+    font-size: 15px;
+    color: red;
+    text-align: center;
+  }
+  .account{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    margin-top: 10px;
+  }
+  .account:hover{
+    background-color: #0056b3;
+  }
+  .text-red{
+    color: red;
+    font-size: 10px;
+  }

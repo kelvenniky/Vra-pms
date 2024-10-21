@@ -1,0 +1,111 @@
+.sidebar {
+  width: 17%;
+  min-height: 100vh;
+  border: 1px solid #a9a9a9;
+  border-top: 0;
+  background-color: #001831; /* Dark background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.sidebar:hover {
+}
+
+.sidebar-options {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #3d80d8; /* Light grey for default text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.sidebar-option:hover {
+  background-color: #2b3a5d; /* Darker background on hover */
+  color: white; /* Change text color on hover */
+}
+
+.sidebar-option.active {
+  background-color: #2b3a5d; /* Active background */
+  color: white; /* Active text color */
+  border-left: 4px solid #4caf50; /* Green accent for active option */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Light shadow for active */
+}
+
+.title-text {
+  font-weight: 800;
+  color: #ffffff; /* Title color */
+  margin-top: 13px;
+}
+
+.title {
+  display: flex;
+  align-items: center; /* Center align title items */
+}
+
+.sidebar-option p {
+  margin-left: 10px; /* Space between icon and text */
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is above all other content */
+}
+
+.modal-content {
+  background: #ffffff; /* White background for modal */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border: 4px solid #4caf50; /* Green border */
+  max-width: 400px; /* Limit width */
+  width: 80%; /* Responsive width */
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Slightly larger font */
+  color: #333; /* Darker text color */
+}
+
+.modal-content button {
+  background-color: #6c757d; /* Bootstrap secondary color */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin: 5px; /* Spacing between buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.modal-content button:hover {
+  background-color: #5a6268; /* Darker shade on hover */
+}
+
+.modal-content button:last-child {
+  background-color: #dc3545; /* Danger color for No button */
+}
+
+.modal-content button:last-child:hover {
+  background-color: #c82333; /* Darker shade on hover */
+}

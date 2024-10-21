@@ -1,0 +1,214 @@
+.whole{
+    background-color: #f8f8f8; /* Light background for the entire dashboard */
+
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    padding: 20px; /* Added padding for overall spacing */
+  }
+  
+  .dashboard.sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #fff; /* White background for sidebar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Internal padding for sidebar */
+  }
+  
+  .sidebar h2 {
+    font-size: 24px; /* Font size for sidebar title */
+    color: #03274d; /* Dark color for contrast */
+  }
+  
+  .sidebar ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+  }
+  
+  .sidebar li {
+    margin: 15px 0; /* Spacing between sidebar items */
+  }
+  
+  .sidebar a {
+    text-decoration: none; /* Remove underline from links */
+    color: #03274d; /* Dark link color */
+    font-weight: bold; /* Bold text for links */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .sidebar a:hover {
+    color: rgb(35, 187, 98); /* Highlight color on hover */
+  }
+  
+ .dashboard .content {
+    flex-grow: 1; /* Allow content to take remaining space */
+    margin-left: 20px; /* Space between sidebar and content */
+    background-color: #fff; /* White background for content area */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Internal padding for content */
+  }
+  
+  .dashboard   .content h1 {
+    font-size: 28px; /* Font size for main header */
+    color: #03274d; /* Dark color for contrast */
+    margin-bottom:10px; /* Spacing below header */
+  }
+  
+  .dashboard .content p {
+    font-size: 16px; /* Standard paragraph size */
+    color: #333; /* Darker text for readability */
+    line-height: 1.6; /* Increased line height for better readability */
+  }
+
+  .dashboard  .cards{
+    display: flex;
+    flex-direction: column;
+    margin-top:18px;
+    margin-left: 25px;
+    
+  }
+  .dashboard .image-container {
+    position: relative; /* Allow absolute positioning of overlay text */
+    display: inline-block; /* Adjusts to the size of the image */
+  }
+  
+  .dashboard .image {
+    display: block; /* Removes the bottom margin of images */
+    width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: #4caf50; /* Dark color for contrast */
+  }
+  .dashboard .charts2{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .dashboard  .box{
+    display: flex;
+    flex-direction: row;
+    gap:40px
+  }
+  .dashboard  .chart-container-pied{
+    margin-bottom: 40px;
+    
+    padding: 10px;
+    background-color:white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    width: 370px;
+    
+  }
+  
+  .dashboard  .overlay-text {
+    position: absolute; /* Position relative to the container */
+    top: 45%; /* Center vertically */
+    left: 35%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    color:white;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center; /* Center text */
+    margin-left: 20px;
+  }
+
+  .dashboard .image:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+  .dashboard  .values{
+    position: absolute; /* Position relative to the container */
+    top: 45%; /* Center vertically */
+    left: 12%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    color:white;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center; /* Center text */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dashboard  .line-cards{
+    display: flex;
+    flex-direction:row;
+    margin-top: 20px;
+     gap: 30px;
+  
+  
+  }
+  .dashboard  .overlay-text:hover{
+    text-decoration: underline;
+  }
+  .dashboard .values:hover{
+   font-size:34px ;
+  }
+  .dashboard  .chart-container1 {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 500px;
+    margin-bottom: 3px;
+   
+  }
+  .dashboard .charts1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  
+  
+  .dashboard .pie-chart-wrapper {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 300px;        /* Set a height to ensure vertical centering works */
+    margin-top: 20px;        /* Optional: add some space above the chart */
+  }
+  .dashboard .chart-containers-graph1 {
+    width: 600px; /* Set a fixed width for charts */
+    height: 350px; /* Set a fixed height for charts */
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  
+  }
+  .dashboard .wrapper{
+    width: 300px;
+  }
+  .dashboard .chart-container-pied{
+    margin-top: 50px;
+    height: 350px;
+  }
+  
+  
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .dashboard {
+      flex-direction: column; /* Stack sidebar and content on smaller screens */
+    }
+  
+    .sidebar {
+      width: 100%; /* Full width for sidebar on mobile */
+      margin-bottom: 20px; /* Spacing below sidebar */
+    }
+  
+    .content {
+      margin-left: 0; /* Remove left margin for content on mobile */
+    }
+  }

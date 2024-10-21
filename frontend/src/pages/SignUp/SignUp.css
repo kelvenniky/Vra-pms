@@ -1,0 +1,83 @@
+/* signup.css */
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+ .signup .signup__view {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup  .signup__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .signup  .signup__contain {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup   .signup__pad {
+    margin-bottom: 15px;
+  }
+  
+  .signup   .signup__email,
+  .signup__password {
+    font-weight: bold;
+  }
+  
+  .signup  .signup__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .signup  .signup__button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .signup  .signup__button:hover {
+    background-color: #0056b3;
+  }
+  
+  .signup__label {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+  }
+  
+  .signup  .signup__tick {
+    width: 13px;
+    margin-right: 5px;
+  }
+  .signup  .signup__view > p{
+    font-size: 15px;
+    color: red;
+    text-align: center;
+  }
+  .signup  .account{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    margin-top: 10px;
+  }
+ .signup  .account:hover{
+    background-color: #0056b3;
+  }
