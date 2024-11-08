@@ -221,153 +221,133 @@ const Dashboard = () => {
                   width: "220px",
                   height: "60px",
                 }}
-              ></div>
-              <div className="overlay-text">
-                <Link to="/allcars?type=today">Today's Vehicles</Link>
-              </div>
-              <div className="values">{getTotalCarsToday()}</div>
-            </div>
-
-            <div className="image-container">
-              <div
-                className="image"
-                style={{ width: "220px", height: "60px" }}
               >
-              </div>
+                <div className="values">{getTotalCarsToday()}</div>
 
-              <div className="overlay-text">
-                <Link to="/allcars?type=yesterday">Yesterday </Link>
-              </div>
-
-              <div className="values">{getTotalCarsYesterday()}</div>
-            </div>
-            <div className="image-container">
-              <div
-                className="image"
-                style={{ width: "220px", height: "60px" }}
-              />
-              
-              
                 <div className="overlay-text">
-              <Link to="/allcars?type=last7days">Last 7 Days</Link>
+                  <Link to="/allcars?type=today">Today's Vehicles</Link>
+                </div>
+              </div>
             </div>
 
-            <div className="values">{getTotalCarsLast7Days()}</div>
+            <div className="image-container">
+              <div className="image" style={{ width: "220px", height: "60px" }}>
+                <div className="values">{getTotalCarsYesterday()}</div>
+                <div className="overlay-text">
+                  <Link to="/allcars?type=yesterday">Yesterday </Link>
+                </div>
+              </div>
             </div>
-          
-         
-          <div className="image-container">
-            <div
-              className="image"
-              style={{ width: "220px", height: "60px" }}
-            ></div>
-            <div className="overlay-text">
-              <Link to="/allcars?type=total">Total Vehicles</Link>
-            </div>
-            <div className="values">{totalCars}</div>
-          </div>
-          </div>
 
+            <div className="image-container">
+              <div className="image" style={{ width: "220px", height: "60px" }}>
+                <div className="values">{getTotalCarsLast7Days()}</div>
+                <div className="overlay-text">
+                  <Link to="/allcars?type=last7days">Last 7 Days</Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="image-container">
+              <div className="image" style={{ width: "220px", height: "60px" }}>
+              <div className="values">{totalCars}</div>
+                <div className="overlay-text">
+                  <Link to="/allcars?type=total">Total Vehicles</Link>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {locationID && locationID !== "Superadmin" && (
-            <div className="box" >
-            <div className="row2" >
-              <div className="col">
-              <div className="chart-containers-graph1">
-                <h3>{locationID} Daily Vehicles</h3>
-                {dailyData.labels.length > 0 && dailyData.counts.length > 0 && (
-                  
-                  <Chart
-                    options={{
-                      chart: {
-                        type: "bar",
-                        height: 250,
-                      },
-                      plotOptions: {
-                        bar: {
-                          horizontal: false,
-                          endingShape: "flat",
-                          columnWidth: "50%",
-                          dataLabels: {
-                            enabled: false,
+            <div className="box">
+              <div className="row2">
+                <div className="col">
+                  <div className="chart-containers-graph1">
+                    <h3>{locationID} Daily Vehicles</h3>
+                    {dailyData.labels.length > 0 &&
+                      dailyData.counts.length > 0 && (
+                        <Chart
+                          options={{
+                            chart: {
+                              type: "bar",
+                              height: 250,
+                            },
+                            plotOptions: {
+                              bar: {
+                                horizontal: false,
+                                endingShape: "flat",
+                                columnWidth: "50%",
+                                dataLabels: {
+                                  enabled: false,
+                                },
+                                borderRadius: 5,
+                              },
+                            },
+                            dataLabels: {
+                              enabled: true,
+                            },
+                            xaxis: {
+                              categories: dailyData.labels,
+                            },
+                            title: {
+                              align: "center",
+                            },
+                            colors: ["#4caf50", "green"],
+
+                            legend: {
+                              position: "top",
+                            },
+                          }}
+                          series={[
+                            {
+                              name: "Number of Vehicles",
+                              data: dailyData.counts,
+                            },
+                          ]}
+                          type="area"
+                          height="250"
+                        />
+                      )}
+                  </div>
+                </div>
+              </div>
+              <div className="chart-container-pied">
+                <h3>{locationID} Most Frequent Vehicles</h3>
+                {frequentCarsData.labels && frequentCarsData.counts && (
+                  <div className="wrapper">
+                    <Pie
+                      data={{
+                        labels: frequentCarsData.labels,
+                        datasets: [
+                          {
+                            label: "Frequency of Vehicles",
+                            data: frequentCarsData.counts,
+                            backgroundColor: ["#4caf50", "#043da5", "green"],
                           },
-                          borderRadius: 5,
-                         
+                        ],
+                      }}
+                      options={{
+                        responsive: true,
+                        plugins: {
+                          legend: {
+                            display: true,
+                            position: "bottom",
                           },
-                          
-                        
-                      },
-                      dataLabels: {
-                        enabled: true,
-                      },
-                      xaxis: {
-                        categories: dailyData.labels,
-                      },
-                      title: {
-                        align: "center",
-                      },
-                      colors: ["#4caf50",'green' ],
-                     
-                      legend: {
-                        position: "top",
-                      },
-                    }}
-                    series={[
-                      {
-                        name: "Number of Vehicles",
-                        data: dailyData.counts,
-                      },
-                    ]}
-                    type="area"
-                    height="250"
-                  />
+                          title: {
+                            display: true,
+                            text: "Most Frequent Vehicles",
+                          },
+                        },
+                      }}
+                    />
+                  </div>
                 )}
               </div>
-              
-              </div>
-            
             </div>
-            <div className="chart-container-pied" >
-              <h3>{locationID} Most Frequent Vehicles</h3>
-              {frequentCarsData.labels && frequentCarsData.counts && (
-                <div className="wrapper">
-                <Pie
-                  data={{
-                    labels: frequentCarsData.labels,
-                    datasets: [{
-                      label: 'Frequency of Vehicles',
-                      data: frequentCarsData.counts,
-                      backgroundColor: [
-                       "#4caf50",
-                        '#043da5',
-                        'green',
-                      ],
-                    }],
-                  }}
-                  options={{
-                    responsive: true,
-                    plugins: {
-                      legend: {
-                        display: true,
-                        position: 'bottom',
-                      },
-                      title: {
-                        display: true,
-                        text: 'Most Frequent Vehicles',
-                      },
-                    },
-                  }}
-                />
-                </div>
-              )}
-            </div>
-            </div>
-            
           )}
 
           {locationID === "Superadmin" && (
-            
-             <div className="box">
+            <div className="box">
               <div className="row2">
                 <div className="chart-containers-graph1">
                   <h3> Daily Vehicles</h3>
@@ -413,41 +393,41 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="chart-container-pied">
-              <h3>Most Frequent Vehicles</h3>
-              {frequentCarsData.labels && frequentCarsData.counts && (
-                <Pie
-                  data={{
-                    labels: frequentCarsData.labels,
-                    datasets: [{
-                      label: 'Frequency of Vehicles',
-                      data:frequentCarsData.counts,
-                      backgroundColor: [
-                        "#032461",
-                        '#043da5',
-                        'green',
-                        '#3b7df7',
+                <h3>Most Frequent Vehicles</h3>
+                {frequentCarsData.labels && frequentCarsData.counts && (
+                  <Pie
+                    data={{
+                      labels: frequentCarsData.labels,
+                      datasets: [
+                        {
+                          label: "Frequency of Vehicles",
+                          data: frequentCarsData.counts,
+                          backgroundColor: [
+                            "#032461",
+                            "#043da5",
+                            "green",
+                            "#3b7df7",
+                          ],
+                        },
                       ],
-                    }],
-                  }}
-                  options={{
-                    responsive: true,
-                    plugins: {
-                      legend: {
-                        display: true,
-                        position: 'left',
+                    }}
+                    options={{
+                      responsive: true,
+                      plugins: {
+                        legend: {
+                          display: true,
+                          position: "left",
+                        },
+                        title: {
+                          display: true,
+                          text: "Most Frequent Vehicles",
+                        },
                       },
-                      title: {
-                        display: true,
-                        text: 'Most Frequent Vehicles',
-                      },
-                    },
-                  }}
-                />
-              )}
+                    }}
+                  />
+                )}
+              </div>
             </div>
-           </div>
-
-            
           )}
         </div>
       </div>

@@ -105,7 +105,7 @@ const AllCars = () => {
     setFilteredCars(filtered);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete =  (id) => {
     axios.delete(`http://localhost:8081/auth/delete/${id}`)
       .then((res) => {
         setCars(cars.filter(car => car.id !== id));
@@ -172,10 +172,8 @@ const AllCars = () => {
         <Sidebar />
         <ToastContainer />
         <div className="view">
-          <div className="top">
-            {/* <h2>{getDisplayName(selectedType)}</h2> */}
-          </div>
-          <div className="contain">
+         
+          <div className="contains">
             <div className="container">
               <p>All Vehicles</p>
             </div>
@@ -185,7 +183,7 @@ const AllCars = () => {
                 <tr>
                   <th>#</th>
                   <th>Vehicle No.</th>
-                  <th>Owners Name</th>
+                  <th>Full Name</th>
                   <th>Contact</th>
                   <th>Vehicle Type</th>
                   <th>Date</th>
@@ -238,13 +236,14 @@ const AllCars = () => {
                             name="date"
                             value={carToEdit.date.split('T')[0]} // Format date
                             onChange={handleChange}
+                            
                           />
                         </td>
                         <td>
                           <input
                             type="time"
                             name="time"
-                            value={carToEdit.time}
+                            value={formatTime(carToEdit.time)}
                             onChange={handleChange}
                           />
                         </td>

@@ -18,11 +18,12 @@ const Entry = () => {
   });
 
   const [admins, setAdmins] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(false); // New state for admin check
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [locationID, setLocationID] = useState(null);
 
   useEffect(() => {
     const today = new Date();
-    const formattedDate = today.toISOString().split("T")[0]; // YYYY-MM-DD
+    const formattedDate = today.toISOString().split("T")[0];
     setValues((prevState) => ({
       ...prevState,
       date: formattedDate,
@@ -36,12 +37,15 @@ const Entry = () => {
         .then(result => {
           if (result.data.Status) {
             setAdmins(result.data.Result);
-            setIsAdmin(result.data.Result.length > 0); // Check if there are admins
+            setIsAdmin(result.data.Result.length > 0);
             if (result.data.Result.length > 0) {
+              const locID = result.data.Result[0].locationID || "";
+              setLocationID(locID);
               setValues((prevState) => ({
                 ...prevState,
-                locationID: result.data.Result[0].locationID || "",
+                locationID: locID,
               }));
+              console.log("Location ID:", locID); // Debugging log
             }
           } else {
             alert(result.data.Error);
@@ -64,7 +68,7 @@ const Entry = () => {
       type: "",
       date: today.toISOString().split("T")[0],
       time: today.toTimeString().slice(0, 5),
-      locationID:""
+      locationID: ""
     });
     console.log("cleared");
   };
@@ -73,7 +77,7 @@ const Entry = () => {
     e.preventDefault();
     axios.post("http://localhost:8081/auth/add", values)
       .then((res) => {
-        handleReset()
+        handleReset();
         toast.success(res.data.message);
         console.log(res);
       })
@@ -135,7 +139,7 @@ const Entry = () => {
                   onChange={(e) => setValues({ ...values, type: e.target.value })}
                 />
               </div>
-              {!isAdmin && ( // Hide date and time for admin
+              {locationID === "Superadmin" && ( // Show date and time for admin
                 <>
                   <div className="textbox">
                     <p style={{ fontWeight: "bold" }}>Date</p>

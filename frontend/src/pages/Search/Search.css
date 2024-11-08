@@ -192,6 +192,15 @@ table .delete:hover {
 .modal-content button:last-child:hover {
   background-color: rgb(185, 28, 28); /* Darker shade on hover */
 }
+td input{
+  border: 1px solid #007bff;
+  outline: #007bff;
+}
+
+.search .buttons{
+  display: flex;
+  flex-direction: row;
+}
 
 /* Responsive adjustments */
 @media (max-width: 600px) {

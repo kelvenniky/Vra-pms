@@ -167,7 +167,7 @@ const Search = () => {
                 <tr>
                   <th>#</th>
                   <th>Vehicle No.</th>
-                  <th>Owner's Name</th>
+                  <th>Full Name</th>
                   <th>Contact</th>
                   <th>Car Type</th>
                   <th>Date</th>
@@ -226,7 +226,7 @@ const Search = () => {
                           <input
                             type="time"
                             name="time"
-                            value={carToEdit.time}
+                            value={formatTime(carToEdit.time)}
                             onChange={handleChange}
                           />
                         </td>

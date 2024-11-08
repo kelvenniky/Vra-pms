@@ -22,7 +22,6 @@
     height: auto; /* Allow height to adjust based on content */
     margin-left: 20px;
     border-radius: 10px;
-    margin-top: 40px;
     background-color: white; /* White background for form */
     padding: 20px; /* Internal padding for better spacing */
   }
@@ -87,6 +86,7 @@
     }
   
     .form {
-      width: 90%; /* Full width on mobile */
+      width: 100%; /* Full width on mobile */
+     
     }
   }

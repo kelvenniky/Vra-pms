@@ -97,7 +97,7 @@ const Navbar = () => {
           <div className="popup-menu">
             <div className="popup-item" onClick={handleCreateUserClick}>
               <i style={{ color: 'black', marginRight: "8px" }} className='icon fa-solid fa-key'></i>
-              <span>Admin</span>
+              <span>User</span>
             </div>
             <div className="popup-item" onClick={handleLogoutClick}>
               <i style={{ color: 'black', marginRight: "8px" }} className='icon fa-solid fa-power-off'></i>

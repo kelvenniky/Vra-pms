@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import { NavLink, useNavigate } from 'react-router-dom';
-import vra from '../../assets/vra2.png';
+import vra from '../../assets/VRA.png';
 import axios from 'axios';
+
 
 
 
@@ -37,17 +38,13 @@ const Sidebar = () => {
     <div className='sidebar'>
       <div className="sidebar-options">
         <div className='title'>
-        <img className='logo' style={{ width: "90px", height: "70px", marginBottom: "10px" }} src={vra} alt="logo" />
+        <img className='logo' style={{ width: "200px", height: "90px",  }} src={vra} alt="logo" />
 
-          <div className='title-text'>
-            <p>VOLTA</p>
-            <p>RIVER</p>
-            <p>AUTHORITY</p>
-          </div>
+          
         </div>
         <hr />
 
-        <hr style={{ marginBottom: "15px" }} />
+        <hr />
         <div className='top'>
           <div onClick={() => setLocation("dashboard")} className={location === "dashboard" ? "active" : ""}>
             <NavLink to='/dashboard' className="sidebar-option">

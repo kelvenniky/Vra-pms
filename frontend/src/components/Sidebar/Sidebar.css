@@ -1,5 +1,6 @@
+/* Sidebar Styles */
 .sidebar {
-  width: 17%;
+  width: 20%; /* Default width for larger screens */
   min-height: 100vh;
   border: 1px solid #a9a9a9;
   border-top: 0;
@@ -8,14 +9,16 @@
   transition: background-color 0.3s; /* Smooth transition for background */
 }
 
-.sidebar:hover {
-}
-
 .sidebar-options {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
 
 .sidebar-option {
   display: flex;
@@ -40,12 +43,7 @@
   color: white; /* Active text color */
   border-left: 4px solid #4caf50; /* Green accent for active option */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Light shadow for active */
-}
-
-.title-text {
-  font-weight: 800;
-  color: #ffffff; /* Title color */
-  margin-top: 13px;
+ 
 }
 
 .title {
@@ -53,9 +51,58 @@
   align-items: center; /* Center align title items */
 }
 
-.sidebar-option p {
-  margin-left: 10px; /* Space between icon and text */
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 25%; /* Slightly wider on medium screens */
+  }
+ 
+    
+  
 }
+@media (max-width: 980px) {
+ .title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+  
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width on small screens */
+    position: relative; /* Reset positioning */
+    min-height: auto; /* Allow height to adjust */
+    box-shadow: none; /* Remove shadow for mobile view */
+  }
+  
+
+  .sidebar-options {
+    padding: 12px; /* Reduced padding for mobile */
+  }
+
+  .sidebar-option {
+    font-size: 14px; /* Smaller font size on mobile */
+    padding: 10px; /* Reduced padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-option {
+    font-size: 10px; /* Even smaller font size for very small screens */
+  }
+}
+@media (max-width: 860px) {
+  .sidebar-option p {
+    font-size:12px; /* Even smaller font size for very small screens */
+  }
+  .sidebar-option {
+    font-size: 12px; /* Even smaller font size for very small screens */
+  }
+
+}
+
 
 /* Modal Styles */
 .modal-overlay {

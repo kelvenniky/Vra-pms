@@ -8,8 +8,13 @@
   font-size: 15px;
   color: black;  
   background-color: white; /* Light background for the whole view */
+  width: 100vw; /* Use 100vw to ensure it covers the full viewport width */
+  position: fixed; /* Make it fixed to the top if needed */
+  top: 0; /* Position it at the top */
+  left: 0; /* Align it to the left */
+  z-index: 1000; /* Ensure it stays above other elements */
+ 
 }
-
 .navbar .logo {
   font-size: 23px; /* Logo font size */
   color: #03274d; /* Logo text color */
@@ -21,7 +26,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 40px; /* Right margin */
+  margin-right: 0px; /* Right margin */
   position: relative; /* Needed for absolute positioning of popup */
 }
 
